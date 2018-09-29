@@ -17,5 +17,6 @@ val fibonacci = buildSequence {
 
 fun main(args: Array<String>) {
     fibonacci.take(5).forEach(::println)
+    fibonacci.take(5).forEach(::println)
 }
 

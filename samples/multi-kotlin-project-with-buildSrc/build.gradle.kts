@@ -17,6 +17,7 @@ allprojects {
 dependencies {
     // Make the root project archives configuration depend on every sub-project
     subprojects.forEach {
+        println("Configuring dependencies $name ... $it")
         archives(it)
     }
 }

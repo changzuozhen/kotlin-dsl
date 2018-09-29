@@ -9,13 +9,16 @@ val dataContent = copySpec {
 tasks {
     register("initConfig", Copy::class) {
 
-        val tokens = mapOf("version" to "2.3.1")
+        val tokens = mapOf("version" to "2.3.1","name" to "copytest")
         inputs.properties(tokens)
 
         from("src/main/config") {
             include("**/*.properties")
             include("**/*.xml")
             filter<ReplaceTokens>("tokens" to tokens)
+        }
+        from("src/main/config") {
+            include("**/*.txt")
         }
 
         from("src/main/languages") {

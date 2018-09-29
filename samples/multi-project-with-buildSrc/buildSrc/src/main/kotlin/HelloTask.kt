@@ -15,8 +15,11 @@ open class HelloTask : DefaultTask() {
     }
 }
 
-fun Project.declareHelloTask() =
-    tasks.register<HelloTask>("hello")
+fun Project.declareHelloTask(): NamedDomainObjectProvider<HelloTask> {
+    return tasks.register<HelloTask>("hello")
+}
 
 val Project.hello: TaskProvider<HelloTask>
-    get() = tasks.named<HelloTask>("hello")
+    get() {
+        return tasks.named<HelloTask>("hello")
+    }

@@ -1,9 +1,11 @@
 plugins {
     application
+    kotlin("jvm") version "1.2.61"
 }
 
 application {
-    mainClassName = "samples.HelloWorld"
+    // mainClassName = "samples.HelloWorld"
+    mainClassName = "samples.HelloWorldKt"
 }
 
 java {
@@ -13,6 +15,7 @@ java {
 
 dependencies {
     testCompile("junit:junit:4.12")
+    compile(kotlin("stdlib"))
 }
 
 repositories {
